@@ -1,0 +1,3 @@
+<?php
+
+include_once('ding_mobile_news.features.inc');

@@ -25,9 +25,13 @@ function ding_mobile_news_default_page_manager_handlers() {
     'access' => array(
       'plugins' => array(
         0 => array(
-          'name' => 'theme',
+          'name' => 'php',
           'settings' => array(
-            'theme' => 'mkolding',
+            'description' => '',
+            'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
+    return true;
+  }
+  return false;',
           ),
           'not' => FALSE,
         ),
@@ -62,7 +66,10 @@ function ding_mobile_news_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'graybox-btns',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $display->content['new-1'] = $pane;
@@ -134,6 +141,7 @@ function ding_mobile_news_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
+    
     
   
   $export['page_article_list_panel_context_2'] = $handler;

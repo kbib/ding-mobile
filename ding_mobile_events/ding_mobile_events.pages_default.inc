@@ -5,7 +5,7 @@
  */
 function ding_mobile_events_default_page_manager_handlers() {
   $export = array();
-
+  
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
@@ -22,6 +22,22 @@ function ding_mobile_events_default_page_manager_handlers() {
     'contexts' => array(),
     'relationships' => array(),
     'pipeline' => 'standard',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => '',
+            'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
+    return true;
+  }
+  return false;',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display;
   $display->api_version = 1;
@@ -115,7 +131,10 @@ function ding_mobile_events_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'graybox-btns',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $display->content['new-4'] = $pane;
@@ -123,7 +142,7 @@ function ding_mobile_events_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  
+      
   
   $export['page_events_overview_panel_context_2'] = $handler;
 

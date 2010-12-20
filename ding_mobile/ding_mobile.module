@@ -30,9 +30,12 @@ function ding_mobile_menu(){
  */
 function ding_mobile_forward_to_status(){
   global $user;
-  #print 'user/'.$user->uid.'/status';
-  #return;
-  drupal_goto('user/'.$user->uid.'/status');
+  if($user->uid){
+    drupal_goto('user/'.$user->uid.'/status');
+  }
+  else{
+    drupal_goto('user/login');
+  }
 }
 
 
@@ -56,6 +59,16 @@ function ding_mobile_form_ting_search_form_alter(&$form,&$form_state) {
   $form['example_text']['#value'] = l(t('Search help'),'/ting/search/help');
   $form['submit']['#type'] = 'image_button';
   $form['submit']['#src'] = drupal_get_path('theme','mkolding').'/images/search-btn.png'; 
+  
+  return $form;
+}
+
+
+function ding_mobile_form_ding_reservation_confirm_form_alter(&$form,&$form_state){
+  
+  #var_dump($form['object']['#value']->title);
+  $title = $form['object']['#value']->title;
+  $form['description']['#value'] = t('You are about to book %material. Are you sure you want to continue?',array('%material' => $title));
   
   return $form;
 }

@@ -68,7 +68,7 @@ function ding_mobile_form_ding_reservation_confirm_form_alter(&$form,&$form_stat
   
   #var_dump($form['object']['#value']->title);
   $title = $form['object']['#value']->title;
-  $form['description']['#value'] = t('You are about to book %material. Are you sure you want to continue?',array('%material' => $title));
+  $form['description']['#value'] = '<h1>'.t('confirm reservation').'</h1><p>'.t('You are about to book %material. Are you sure you want to continue?',array('%material' => $title)).'</p>';
   
   return $form;
 }

@@ -19,7 +19,7 @@ function ding_mobile_events_views_default_views() {
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
     'field_datetime_value' => array(
-      'label' => 'Tid & dato',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -42,8 +42,8 @@ function ding_mobile_events_views_default_views() {
       'hide_empty' => 0,
       'empty_zero' => 0,
       'link_to_node' => 0,
-      'label_type' => 'widget',
-      'format' => 'medium',
+      'label_type' => 'none',
+      'format' => 'date_short',
       'multiple' => array(
         'multiple_number' => '',
         'multiple_from' => '',
@@ -54,7 +54,7 @@ function ding_mobile_events_views_default_views() {
         'show_repeat_rule' => '',
       ),
       'fromto' => array(
-        'fromto' => 'both',
+        'fromto' => 'value',
       ),
       'exclude' => 0,
       'id' => 'field_datetime_value',
@@ -256,7 +256,7 @@ function ding_mobile_events_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'medium',
+      'format' => 'date_short',
       'multiple' => array(
         'multiple_number' => '',
         'multiple_from' => '',
@@ -267,7 +267,7 @@ function ding_mobile_events_views_default_views() {
         'show_repeat_rule' => '',
       ),
       'fromto' => array(
-        'fromto' => 'both',
+        'fromto' => 'value',
       ),
       'exclude' => 0,
       'id' => 'field_datetime_value',
@@ -403,7 +403,7 @@ function ding_mobile_events_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'medium',
+      'format' => 'date_short',
       'multiple' => array(
         'multiple_number' => '',
         'multiple_from' => '',
@@ -414,7 +414,7 @@ function ding_mobile_events_views_default_views() {
         'show_repeat_rule' => '',
       ),
       'fromto' => array(
-        'fromto' => 'both',
+        'fromto' => 'value',
       ),
       'exclude' => 0,
       'id' => 'field_datetime_value',
@@ -495,7 +495,7 @@ function ding_mobile_events_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'medium',
+      'format' => 'date_short',
       'multiple' => array(
         'multiple_number' => '',
         'multiple_from' => '',
@@ -506,7 +506,7 @@ function ding_mobile_events_views_default_views() {
         'show_repeat_rule' => '',
       ),
       'fromto' => array(
-        'fromto' => 'both',
+        'fromto' => 'value',
       ),
       'exclude' => 0,
       'id' => 'field_datetime_value',

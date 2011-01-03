@@ -96,7 +96,7 @@ function ting_search_mobile_default_page_manager_handlers() {
   $handler->conf['display'] = $display;
   
   $export['page_search_results_panel_context_2'] = $handler; 
-  
+    
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
@@ -119,9 +119,9 @@ function ting_search_mobile_default_page_manager_handlers() {
           'settings' => array(
             'description' => '',
             'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
-      return true;
-    }
-    return false;',
+        return true;
+      }
+      return false;',
           ),
           'not' => FALSE,
         ),
@@ -129,7 +129,6 @@ function ting_search_mobile_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display;
-  $display->api_version = 1;
   $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -139,6 +138,7 @@ function ting_search_mobile_default_page_manager_handlers() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
@@ -146,7 +146,6 @@ function ting_search_mobile_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass;
-    $pane->api_version = 1;
     $pane->pid = 'new-1';
     $pane->panel = 'middle';
     $pane->type = 'object_view';
@@ -171,7 +170,6 @@ function ting_search_mobile_default_page_manager_handlers() {
     $display->content['new-1'] = $pane;
     $display->panels['middle'][0] = 'new-1';
     $pane = new stdClass;
-    $pane->api_version = 1;
     $pane->pid = 'new-2';
     $pane->panel = 'middle';
     $pane->type = 'recommendation_list';
@@ -190,13 +188,15 @@ function ting_search_mobile_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'graybox-btns reset-list',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $display->content['new-2'] = $pane;
     $display->panels['middle'][1] = 'new-2';
     $pane = new stdClass;
-    $pane->api_version = 1;
     $pane->pid = 'new-3';
     $pane->panel = 'middle';
     $pane->type = 'relevant';
@@ -224,6 +224,7 @@ function ting_search_mobile_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
+    
   
   $export['page_ting_object_view_panel_context_2'] = $handler;
   

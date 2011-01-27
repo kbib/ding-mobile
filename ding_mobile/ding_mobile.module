@@ -34,7 +34,7 @@ function ding_mobile_forward_to_status(){
     drupal_goto('user/'.$user->uid.'/status');
   }
   else{
-    drupal_goto('user/login');
+    drupal_goto('user/login','destination=user/status');
   }
 }
 
@@ -72,3 +72,14 @@ function ding_mobile_form_ding_reservation_confirm_form_alter(&$form,&$form_stat
   
   return $form;
 }
+
+/**
+ * Implementation of hook_ting_object_buttons().
+ */
+function ding_mobile_ting_object_buttons($object) {
+  if (!empty($object->localId) && ting_object_is($object, 'reservable')) {
+    return '<button onclick="location.href=\''.url('ding/reservation/' . $object->localId,array('query' => drupal_get_destination(),'absolute' => true)).'\';">'.t('Reserve now').'</button>';
+  }
+}
+
+

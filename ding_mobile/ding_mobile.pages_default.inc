@@ -299,6 +299,27 @@ return false;',
     $pane = new stdClass;
     $pane->pid = 'new-5';
     $pane->panel = 'middle';
+    $pane->type = 'debt_list';
+    $pane->subtype = 'ding_debt_list_form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_uid_1',
+      'override_title' => 1,
+      'override_title_text' => 'Bøder',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $display->content['new-5'] = $pane;
+    $display->panels['middle'][4] = 'new-5';
+    $pane = new stdClass;
+    $pane->pid = 'new-6';
+    $pane->panel = 'middle';
     $pane->type = 'booking_list';
     $pane->subtype = 'ding_booking_list_form';
     $pane->shown = TRUE;
@@ -314,11 +335,11 @@ return false;',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
-    $display->content['new-5'] = $pane;
-    $display->panels['middle'][4] = 'new-5';
+    $pane->position = 5;
+    $display->content['new-6'] = $pane;
+    $display->panels['middle'][5] = 'new-6';
     $pane = new stdClass;
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-7';
     $pane->panel = 'middle';
     $pane->type = 'relevant';
     $pane->subtype = 'relevant_campaigns';
@@ -338,12 +359,13 @@ return false;',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
-    $display->content['new-6'] = $pane;
-    $display->panels['middle'][5] = 'new-6';
+    $pane->position = 6;
+    $display->content['new-7'] = $pane;
+    $display->panels['middle'][6] = 'new-7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-3';
   $handler->conf['display'] = $display;
+    
      
     
   $export['page_user_library_status_panel_context_2'] = $handler;

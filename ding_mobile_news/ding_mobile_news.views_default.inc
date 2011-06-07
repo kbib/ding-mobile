@@ -354,7 +354,7 @@ function ding_mobile_news_views_default_views() {
   $handler->override_option('inherit_panels_path', '0');
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
   $handler->override_option('fields', array(
-    'field_list_image_fid' => array(
+    'field_list_image_mobile_fid' => array(
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
@@ -387,9 +387,9 @@ function ding_mobile_news_views_default_views() {
         'multiple_reversed' => FALSE,
       ),
       'exclude' => 0,
-      'id' => 'field_list_image_fid',
-      'table' => 'node_data_field_list_image',
-      'field' => 'field_list_image_fid',
+      'id' => 'field_list_image_mobile_fid',
+      'table' => 'node_data_field_list_image_mobile',
+      'field' => 'field_list_image_mobile_fid',
       'override' => array(
         'button' => 'Use default',
       ),

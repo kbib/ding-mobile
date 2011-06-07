@@ -83,3 +83,20 @@ function ding_mobile_ting_object_buttons($object) {
 }
 
 
+/**
+ * migrating all list images to list image mobile
+ */
+function ding_mobile_update_6001(){
+
+  $result = db_query('select nid from node');
+  while($row = db_fetch_array($result)){
+    $n = node_load($row['nid']);
+    if($n->type == 'article' OR $n->type == 'event'){
+      if($n->field_list_image_mobile[0] == null AND $n->field_list_image[0] != null){
+        $n->field_list_image_mobile = $n->field_list_image;
+        node_save($n);
+        //dsm($n);
+      }
+    }
+  }
+}

@@ -164,7 +164,7 @@ return false;',
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_user_library_status_panel_context_2';
+  $handler->name = 'page_userview';
   $handler->task = 'page';
   $handler->subtask = 'user_library_status';
   $handler->handler = 'panel_context';
@@ -184,9 +184,9 @@ return false;',
           'settings' => array(
             'description' => '',
             'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
-    return true;
-  }
-  return false;',
+      return true;
+    }
+    return false;',
           ),
           'not' => FALSE,
         ),
@@ -254,6 +254,27 @@ return false;',
     $pane = new stdClass;
     $pane->pid = 'new-3';
     $pane->panel = 'middle';
+    $pane->type = 'debt_list';
+    $pane->subtype = 'ding_debt_list_form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_uid_1',
+      'override_title' => 1,
+      'override_title_text' => 'Bøder',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $display->content['new-3'] = $pane;
+    $display->panels['middle'][2] = 'new-3';
+    $pane = new stdClass;
+    $pane->pid = 'new-4';
+    $pane->panel = 'middle';
     $pane->type = 'profile';
     $pane->subtype = 'ding_library_user_loan_list_form';
     $pane->shown = TRUE;
@@ -269,11 +290,11 @@ return false;',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
-    $display->content['new-3'] = $pane;
-    $display->panels['middle'][2] = 'new-3';
+    $pane->position = 3;
+    $display->content['new-4'] = $pane;
+    $display->panels['middle'][3] = 'new-4';
     $pane = new stdClass;
-    $pane->pid = 'new-4';
+    $pane->pid = 'new-5';
     $pane->panel = 'middle';
     $pane->type = 'reservation_list';
     $pane->subtype = 'ding_reservation_list_form';
@@ -292,27 +313,6 @@ return false;',
       'css_id' => 'reservation',
       'css_class' => '',
     );
-    $pane->extras = array();
-    $pane->position = 3;
-    $display->content['new-4'] = $pane;
-    $display->panels['middle'][3] = 'new-4';
-    $pane = new stdClass;
-    $pane->pid = 'new-5';
-    $pane->panel = 'middle';
-    $pane->type = 'debt_list';
-    $pane->subtype = 'ding_debt_list_form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_uid_1',
-      'override_title' => 1,
-      'override_title_text' => 'Bøder',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
     $pane->extras = array();
     $pane->position = 4;
     $display->content['new-5'] = $pane;
@@ -363,12 +363,12 @@ return false;',
     $display->content['new-7'] = $pane;
     $display->panels['middle'][6] = 'new-7';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-3';
+  $display->title_pane = 'new-4';
   $handler->conf['display'] = $display;
-    
+     
      
     
-  $export['page_user_library_status_panel_context_2'] = $handler;
+  $export['page_userview'] = $handler;
     
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */

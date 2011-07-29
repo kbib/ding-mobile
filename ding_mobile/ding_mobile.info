@@ -19,13 +19,13 @@ features[menu_links][] = "menu-mobile-menu:arrangementer"
 features[menu_links][] = "menu-mobile-menu:artikler"
 features[menu_links][] = "menu-mobile-menu:flere"
 features[menu_links][] = "menu-mobile-menu:user/status"
-<<<<<<< HEAD
 features[page_manager_handlers][] = "node_view_panel_context_8"
-=======
+
 features[page_manager_handlers][] = "node_view_panel_context_3"
->>>>>>> 281ae8ce722e8bbde82a10ee6feb2ddd966ea267
 features[page_manager_handlers][] = "user_view_panel_context_2"
 features[page_manager_handlers][] = "user_view_panel_context_4"
+features[page_manager_handlers][] = "page_userview"
+
 features[page_manager_pages][] = "flere"
 features[variable][] = "mobile-tools-theme-switch"
 features[variable][] = "mobile_notification"

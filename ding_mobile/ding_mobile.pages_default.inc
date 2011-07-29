@@ -161,215 +161,234 @@ return false;',
 
   $export['user_view_panel_context_4'] = $handler;
     
-  $handler = new stdClass;
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_userview';
-  $handler->task = 'page';
-  $handler->subtask = 'user_library_status';
-  $handler->handler = 'panel_context';
-  $handler->weight = -30;
-  $handler->conf = array(
-    'title' => 'mobile',
-    'no_blocks' => 0,
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'pipeline' => 'standard',
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'php',
-          'settings' => array(
-            'description' => '',
-            'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
-      return true;
-    }
-    return false;',
-          ),
-          'not' => FALSE,
-        ),
-      ),
-    ),
-  );
-  $display = new panels_display;
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'middle' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass;
-    $pane->pid = 'new-1';
-    $pane->panel = 'middle';
-    $pane->type = 'block';
-    $pane->subtype = 'ding_library_user-account';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $display->content['new-1'] = $pane;
-    $display->panels['middle'][0] = 'new-1';
-    $pane = new stdClass;
-    $pane->pid = 'new-2';
-    $pane->panel = 'middle';
-    $pane->type = 'debt_list';
-    $pane->subtype = 'ding_debt_notice';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_uid_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $display->content['new-2'] = $pane;
-    $display->panels['middle'][1] = 'new-2';
-    $pane = new stdClass;
-    $pane->pid = 'new-3';
-    $pane->panel = 'middle';
-    $pane->type = 'debt_list';
-    $pane->subtype = 'ding_debt_list_form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_uid_1',
-      'override_title' => 1,
-      'override_title_text' => 'BÃ¸der',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $display->content['new-3'] = $pane;
-    $display->panels['middle'][2] = 'new-3';
-    $pane = new stdClass;
-    $pane->pid = 'new-4';
-    $pane->panel = 'middle';
-    $pane->type = 'profile';
-    $pane->subtype = 'ding_library_user_loan_list_form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_uid_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $display->content['new-4'] = $pane;
-    $display->panels['middle'][3] = 'new-4';
-    $pane = new stdClass;
-    $pane->pid = 'new-5';
-    $pane->panel = 'middle';
-    $pane->type = 'reservation_list';
-    $pane->subtype = 'ding_reservation_list_form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_uid_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'reservation',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $display->content['new-5'] = $pane;
-    $display->panels['middle'][4] = 'new-5';
-    $pane = new stdClass;
-    $pane->pid = 'new-6';
-    $pane->panel = 'middle';
-    $pane->type = 'booking_list';
-    $pane->subtype = 'ding_booking_list_form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_uid_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $display->content['new-6'] = $pane;
-    $display->panels['middle'][5] = 'new-6';
-    $pane = new stdClass;
-    $pane->pid = 'new-7';
-    $pane->panel = 'middle';
-    $pane->type = 'relevant';
-    $pane->subtype = 'relevant_campaigns';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'empty',
-        1 => 'empty',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $display->content['new-7'] = $pane;
-    $display->panels['middle'][6] = 'new-7';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-4';
-  $handler->conf['display'] = $display;
-     
-     
-    
+	$handler = new stdClass;
+	$handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+	$handler->api_version = 1;
+	$handler->name = 'page_userview';
+	$handler->task = 'page';
+	$handler->subtask = 'user_library_status';
+	$handler->handler = 'panel_context';
+	$handler->weight = -30;
+	$handler->conf = array(
+	  'title' => 'mobile',
+	  'no_blocks' => 0,
+	  'css_id' => '',
+	  'css' => '',
+	  'contexts' => array(),
+	  'relationships' => array(),
+	  'pipeline' => 'standard',
+	  'access' => array(
+	    'plugins' => array(
+	      0 => array(
+	        'name' => 'php',
+	        'settings' => array(
+	          'description' => '',
+	          'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
+	    return true;
+	  }
+	  return false;',
+	        ),
+	        'not' => FALSE,
+	      ),
+	    ),
+	  ),
+	);
+	$display = new panels_display;
+	$display->layout = 'onecol';
+	$display->layout_settings = array();
+	$display->panel_settings = array(
+	  'style_settings' => array(
+	    'default' => NULL,
+	    'top' => NULL,
+	    'left' => NULL,
+	    'right' => NULL,
+	    'bottom' => NULL,
+	    'middle' => NULL,
+	  ),
+	);
+	$display->cache = array();
+	$display->title = '';
+	$display->content = array();
+	$display->panels = array();
+	  $pane = new stdClass;
+	  $pane->pid = 'new-1';
+	  $pane->panel = 'middle';
+	  $pane->type = 'debt_list';
+	  $pane->subtype = 'ding_debt_list_form';
+	  $pane->shown = TRUE;
+	  $pane->access = array(
+	    'logic' => 'and',
+	    'plugins' => array(
+	      0 => array(
+	        'name' => 'php',
+	        'settings' => array(
+	          'description' => 'user has debts?',
+	          'php' => '$debts = ding_provider_invoke(\'debt\',\'list\',$contexts[\'argument_uid_1\']->data);
+	
+	if (sizeof($debts) > 0) {
+	  return true;
+	}
+	else {
+	  return false;
+	}
+	
+	',
+	        ),
+	        'not' => FALSE,
+	      ),
+	    ),
+	  );
+	  $pane->configuration = array(
+	    'context' => 'argument_uid_1',
+	    'override_title' => 1,
+	    'override_title_text' => 'B¿der',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array();
+	  $pane->extras = array();
+	  $pane->position = 0;
+	  $display->content['new-1'] = $pane;
+	  $display->panels['middle'][0] = 'new-1';
+	  $pane = new stdClass;
+	  $pane->pid = 'new-2';
+	  $pane->panel = 'middle';
+	  $pane->type = 'block';
+	  $pane->subtype = 'ding_library_user-account';
+	  $pane->shown = TRUE;
+	  $pane->access = array();
+	  $pane->configuration = array(
+	    'override_title' => 0,
+	    'override_title_text' => '',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array();
+	  $pane->extras = array();
+	  $pane->position = 1;
+	  $display->content['new-2'] = $pane;
+	  $display->panels['middle'][1] = 'new-2';
+	  $pane = new stdClass;
+	  $pane->pid = 'new-3';
+	  $pane->panel = 'middle';
+	  $pane->type = 'debt_list';
+	  $pane->subtype = 'ding_debt_notice';
+	  $pane->shown = TRUE;
+	  $pane->access = array();
+	  $pane->configuration = array(
+	    'context' => 'argument_uid_1',
+	    'override_title' => 0,
+	    'override_title_text' => '',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array();
+	  $pane->extras = array();
+	  $pane->position = 2;
+	  $display->content['new-3'] = $pane;
+	  $display->panels['middle'][2] = 'new-3';
+	  $pane = new stdClass;
+	  $pane->pid = 'new-4';
+	  $pane->panel = 'middle';
+	  $pane->type = 'profile';
+	  $pane->subtype = 'ding_library_user_loan_list_form';
+	  $pane->shown = TRUE;
+	  $pane->access = array();
+	  $pane->configuration = array(
+	    'context' => 'argument_uid_1',
+	    'override_title' => 0,
+	    'override_title_text' => '',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array();
+	  $pane->extras = array();
+	  $pane->position = 3;
+	  $display->content['new-4'] = $pane;
+	  $display->panels['middle'][3] = 'new-4';
+	  $pane = new stdClass;
+	  $pane->pid = 'new-5';
+	  $pane->panel = 'middle';
+	  $pane->type = 'reservation_list';
+	  $pane->subtype = 'ding_reservation_list_form';
+	  $pane->shown = TRUE;
+	  $pane->access = array();
+	  $pane->configuration = array(
+	    'context' => 'argument_uid_1',
+	    'override_title' => 0,
+	    'override_title_text' => '',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array(
+	    'css_id' => 'reservation',
+	    'css_class' => '',
+	  );
+	  $pane->extras = array();
+	  $pane->position = 4;
+	  $display->content['new-5'] = $pane;
+	  $display->panels['middle'][4] = 'new-5';
+	  $pane = new stdClass;
+	  $pane->pid = 'new-6';
+	  $pane->panel = 'middle';
+	  $pane->type = 'booking_list';
+	  $pane->subtype = 'ding_booking_list_form';
+	  $pane->shown = TRUE;
+	  $pane->access = array();
+	  $pane->configuration = array(
+	    'context' => 'argument_uid_1',
+	    'override_title' => 0,
+	    'override_title_text' => '',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array();
+	  $pane->extras = array();
+	  $pane->position = 5;
+	  $display->content['new-6'] = $pane;
+	  $display->panels['middle'][5] = 'new-6';
+	  $pane = new stdClass;
+	  $pane->pid = 'new-7';
+	  $pane->panel = 'middle';
+	  $pane->type = 'relevant';
+	  $pane->subtype = 'relevant_campaigns';
+	  $pane->shown = FALSE;
+	  $pane->access = array();
+	  $pane->configuration = array(
+	    'context' => array(
+	      0 => 'empty',
+	      1 => 'empty',
+	    ),
+	    'override_title' => 0,
+	    'override_title_text' => '',
+	  );
+	  $pane->cache = array();
+	  $pane->style = array(
+	    'settings' => NULL,
+	  );
+	  $pane->css = array();
+	  $pane->extras = array();
+	  $pane->position = 6;
+	  $display->content['new-7'] = $pane;
+	  $display->panels['middle'][6] = 'new-7';
+	$display->hide_title = PANELS_TITLE_FIXED;
+	$display->title_pane = 'new-4';
+	$handler->conf['display'] = $display;
+
   $export['page_userview'] = $handler;
-    
+
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;

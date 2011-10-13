@@ -97,20 +97,20 @@ function ting_search_mobile_default_page_manager_handlers() {
     'pipeline' => 'standard',
     'access' => array(
       'plugins' => array(
-  0 => array(
+        0 => array(
           'name' => 'php',
           'settings' => array(
             'description' => 'is mobile',
             'php' => 'if (mobile_tools_is_mobile_site() == \'mobile\') {
-        return true;
-      }
-      return false;',
-  ),
+          return true;
+        }
+        return false;',
+          ),
           'not' => FALSE,
-  ),
-  ),
+        ),
+      ),
       'logic' => 'and',
-  ),
+    ),
   );
   $display = new panels_display;
   $display->layout = 'onecol';
@@ -123,64 +123,41 @@ function ting_search_mobile_default_page_manager_handlers() {
       'right' => NULL,
       'bottom' => NULL,
       'middle' => NULL,
-  ),
+    ),
   );
   $display->cache = array();
   $display->title = '%object_id:title_full';
   $display->content = array();
   $display->panels = array();
-  $pane = new stdClass;
-  $pane->pid = 'new-1';
-  $pane->panel = 'middle';
-  $pane->type = 'object_view';
-  $pane->subtype = 'object_view';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
+    $pane = new stdClass;
+    $pane->pid = 'new-1';
+    $pane->panel = 'middle';
+    $pane->type = 'object_view';
+    $pane->subtype = 'object_view';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
       'context' => 'argument_object_id_1',
       'override_title' => 0,
       'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
+    );
+    $pane->cache = array();
+    $pane->style = array(
       'settings' => NULL,
-  );
-  $pane->css = array(
+    );
+    $pane->css = array(
       'css_id' => '',
       'css_class' => 'clearfix',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $display->content['new-1'] = $pane;
-  $display->panels['middle'][0] = 'new-1';
-  $pane = new stdClass;
-  $pane->pid = 'new-2';
-  $pane->panel = 'middle';
-  $pane->type = 'recommendation_list';
-  $pane->subtype = 'recommendation_list';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-      'context' => array(
-  0 => 'argument_object_id_1',
-  1 => 'empty',
-  ),
-      'override_title' => 1,
-      'override_title_text' => 'Andre der har lånt',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-      'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $display->content['new-2'] = $pane;
-  $display->panels['middle'][1] = 'new-2';
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $display->content['new-1'] = $pane;
+    $display->panels['middle'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  
+    
+    
   $export['page_ting_object_view_panel_context_2'] = $handler;
   
   

@@ -77,7 +77,7 @@ function ting_search_mobile_default_page_manager_handlers() {
   $handler->conf['display'] = $display;
   
 
-  $export['page_ting_collection_view_panel_context_2'] = $handler;  
+  $export['page_search_results_panel_context_2'] = $handler;  
   
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
